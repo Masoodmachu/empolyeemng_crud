@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+HOME
+{% endblock %}
+
+{% block content %}
+<h5 class="text-center text-primary ">WELCOME TO HOME PAGE</h5>
+{% if user.is_authenticated %}
+<div class="container mt-5 bg-dark p-3">
+    <h6 class="text-primary my-3">COMPANY:</h6>
+    <table class="table table-bordered table-stripped">
+        <tr>
+            <th class="text-white text-center">ID</th>
+            <th class="text-white text-center">NAME</th>
+             <th class="text-white text-center">WORKING EMPLOYEES</th>
+        </tr>
+        {% for i in c %}
+        <tr>
+            <td class="text-white text-center">{{i.id}}</td>
+            <td class="text-white text-center">{{i.name}}</td>
+            <td class="text-primary"><a href="{% url 'employee:viewdepemp' i.id %}"><button style="margin-left:45%;" class="btn btn-primary">VIew</button></a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+
+<div class="container mt-5 bg-dark p-3">
+    <h6 class="text-primary my-3">DEPARTMENTS:</h6>
+    <table class="table table-bordered table-stripped">
+        <tr>
+            <th class="text-white ">ID</th>
+            <th class="text-white">NAME</th>
+
+        </tr>
+        {% for i in d %}
+        <tr>
+            <td class="text-white">{{i.id}}</td>
+            <td class="text-white">{{i.name}}</td>
+
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endif %}
+{% endblock %}
+

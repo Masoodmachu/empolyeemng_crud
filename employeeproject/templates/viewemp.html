@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+VIEW DETAIL
+{% endblock %}
+
+
+{% block content %}
+
+<div class="container mt-5 mb-5 bg-white p-5">
+    <table class="table table-bordered table-stripped  ">
+        <tr>
+            <th>Id</th>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Company</th>
+            <th>Department</th>
+            <th>Address</th>
+            <th>Details</th>
+            <th>Delete</th>
+
+        </tr>
+        {% for i in e %}
+        <tr>
+            <th>{{i.id}}</th>
+            <th><img src="{{i.image.url}}" height="200px" width="200px"></th>
+            <td class="text-primary" style="width:200px;text-align:center;padding-top:80px;">{{i.name}}</td>
+            <td style="width:200px;text-align:center;padding-top:80px;">{{i.age}}</td>
+            <td style="width:200px;text-align:center;padding-top:80px;">{{i.company}}</td>
+            <td style="width:200px;text-align:center;padding-top:80px;">{{i.department}}</td>
+            <td style="padding-top:70px;">{{i.address}}</td>
+            <td style="padding-top:70px;"><a href="{% url 'employee:detail' i.id %}"><button class="btn btn-primary" >View</button></a></td>
+            <td style="padding-top:70px;"><a href="{% url 'employee:delete' i.id %}"><button class="btn btn-danger" >Delete</button></a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+
+{% endblock %}

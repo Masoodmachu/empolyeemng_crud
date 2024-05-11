@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}
+DETAIL
+{% endblock %}
+
+
+{% block content %}
+<h5 class="text-center text-primary">Employee Details</h5>
+
+
+<div class="container mt-5 bg-white p-5" >
+    <table class="table table-bordered table-stripped ">
+        {% for i in h %}
+        <center><img class="mb-3" src="{{i.image.url}}" height="250px" width="250px"></center>
+        <tr>
+            <th>Emp Id:</th>
+            <td>{{i.id}}</td>
+        </tr>
+        <tr>
+            <th class="text-primary">Name:</th>
+            <td class="text-primary"><b>{{i.name}}</b></td>
+        </tr>
+        <tr>
+            <th>Age:</th>
+            <td>{{i.age}}</td>
+
+        </tr>
+        <tr>
+            <th>Company:</th>
+            <td>{{i.company}}</td>
+        </tr>
+        <tr>
+            <th class="text-danger">Department:</th>
+            <td class="text-danger"><b>{{i.department}}</b></td>
+
+        </tr>
+        <tr>
+            <th>Address:</th>
+            <td>{{i.address}}</td>
+        </tr>
+        <tr>
+            <th>Phone Number:</th>
+            <td>{{i.phone_number}}</td>
+        </tr>
+        <tr>
+            <th>Salary:</th>
+            <td>{{i.salary}}</td>
+        </tr>
+        <tr>
+            <th>Joined Date:</th>
+            <td>{{i.joined_date}}</td>
+        </tr>
+
+
+    </table>
+    <a href="{% url 'employee:update' i.id %}"><button class="btn btn-warning" style="margin-left:40%;">UPDATE</button></a>
+    {% endfor %}
+</div>
+
+
+
+
+
+
+{% endblock %}

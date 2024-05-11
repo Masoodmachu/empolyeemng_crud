@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+DEP EMP
+{% endblock %}
+
+{% block content %}
+
+<h5 class="text-center text-primary">DEP EMP</h5>
+<div class="container-fluid bg-white p-5 mt-5">
+<table class="table table-bordered table-stripped  ">
+    <tr>
+        <th class="text-center" >EMP ID</th>
+        <th class="text-center">NAME</th>
+
+    </tr>
+    {% for i in e %}
+    <tr>
+        <td class="text-center">{{i.id}}</td>
+        <td class="text-danger text-center">{{i.name}}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+    </div>
+
+{% endblock %}

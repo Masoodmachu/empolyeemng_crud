@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+ADD EMPLOYEE
+{% endblock %}
+
+{% block content %}
+
+<!--<h5 class="text-center text-primary">ADD EMPLOYEE</h5>-->
+
+<div class="container mt-5">
+    <form method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+<!--      <div class="mb-3">-->
+<!--        <label class="form-label">Name:</label>-->
+<!--        <input type="text" class="form-control" id="title" name="name">-->
+<!--    &lt;!&ndash;    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>&ndash;&gt;-->
+<!--      </div>-->
+
+
+
+<!--      <div class="mb-3">-->
+<!--        <label for="age" class="form-label">Age:</label>-->
+<!--        <input type="number" class="form-control" id="age" name="age">-->
+<!--      </div>-->
+
+<!--      <div class="mb-3">-->
+<!--        <label  class="form-label">Company:</label>-->
+
+<!--        <select name="company" id="cars">-->
+<!--          {% for i in c %}-->
+<!--          <option value="{{i.name}}">{{i.name}}</option>-->
+<!--&lt;!&ndash;          <option value="Wipro">Wipro</option>&ndash;&gt;-->
+<!--&lt;!&ndash;          <option value="mercedes">Mercedes</option>&ndash;&gt;-->
+<!--&lt;!&ndash;          <option value="audi">Audi</option>&ndash;&gt;-->
+<!--          {% endfor %}-->
+<!--        </select>-->
+
+<!--      </div>-->
+
+<!--      <div class="mb-3">-->
+<!--        <label class="form-label">Department:</label>-->
+
+<!--        <select name="department" >-->
+<!--          {% for i in d %}-->
+<!--          <option value="{{i.name}}">{{i.name}}</option>-->
+<!--&lt;!&ndash;          <option value="Developer">Developer</option>&ndash;&gt;-->
+<!--&lt;!&ndash;          <option value="Technical">Technical</option>&ndash;&gt;-->
+<!--&lt;!&ndash;          <option value="audi">Audi</option>&ndash;&gt;-->
+<!--          {% endfor %}-->
+<!--        </select>-->
+
+<!--      </div>-->
+<!--      <div class="mb-3">-->
+<!--        <label for="address" class="form-label">Address:</label>-->
+<!--        <input type="text" class="form-control" id="address" name="address">-->
+<!--      </div>-->
+<!--      <div class="mb-3">-->
+<!--        <label for="image" class="form-label">Image:</label>-->
+<!--        <input type="file" class="form-control" id="image" name="image">-->
+<!--      </div>-->
+<!--      <div class="mb-3">-->
+<!--        <label for="phone" class="form-label">Phone number:</label>-->
+<!--        <input type="number" class="form-control" id="phone" name="phone">-->
+<!--      </div>-->
+<!--      <div class="mb-3">-->
+<!--        <label for="salary" class="form-label">Salary:</label>-->
+<!--        <input type="number" class="form-control" id="Salary" name="salary">-->
+<!--      </div>-->
+          {{f|crispy}}
+        <center>
+      <button type="submit" class="btn btn-primary">Submit</button>
+            </center>
+    </form>
+</div>
+
+
+{% endblock %}
